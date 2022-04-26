@@ -4,16 +4,13 @@ nav {
   background-color: #405681;
   height: 120px;
   width: 100vw;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: 0.1em;
-  padding-top: 1em;
+  padding: 1em 1.5em 0.1em 1.5em;
   justify-content: space-between;
   z-index: 9999;
   position: fixed;
 }
 
-#tweeter {
+.tweeter {
   font-family: 'Bungee', cursive;
   display: flex;
   align-items: center;
