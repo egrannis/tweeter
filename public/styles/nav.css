@@ -7,7 +7,6 @@ nav {
   padding-right: 1.5em;
   padding-bottom: 0.1em;
   padding-top: 1em;
-  width: 100vw;
 }
 
 span {
@@ -16,3 +15,17 @@ span {
   align-items: center;
   font-size: 40px;
 }
+
+.title-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.fa-solid fa-angles-down {
+  display: flex;
+  justify-content: center;
+}
+
+
+
