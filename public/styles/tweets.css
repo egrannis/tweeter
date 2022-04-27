@@ -10,17 +10,46 @@
 
 .tweet header {
   display: flex;
-  justify-content: flex-start;
-  height: 200px;
+  justify-content: space-between;
+  height: 3em;
   /* margin: 50px 0px 50px 0px; */
+}
+
+.lefthand {
+  display:flex;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.icon {
+  display: flex;
+  background-image: URL(https://i.imgur.com/73hZDYK.png);
+  width: 64px;
+  height: 64px;
+  border: none;
+}
+
+.handle {
+  display: flex;
+  justify-content: flex-end;
+  color: #BFC5D9;
+  font-weight: 600;
 }
 
 .tweet article {
   display:flex;
+  align-content: center;
+  height: 4em;
+  padding: 20px;
+  font-size: 25px;
+  font-weight: 300;
   /* height: 2em; */
 }
 
 .tweet footer {
   display: flex;
-  /* height: 200px; */
+  border-top: 4px solid #545149;
+  padding: 20px 10px 0px 20px;
+  font-size: 15px;
+  justify-content: space-between;
 }
