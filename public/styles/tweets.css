@@ -1,0 +1,26 @@
+.tweet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #545149;
+  border: 4px solid #545149;
+  background-color: #f4f1ec;
+  padding: 20px 10px 20px 10px;
+}
+
+.tweet header {
+  display: flex;
+  justify-content: flex-start;
+  height: 200px;
+  /* margin: 50px 0px 50px 0px; */
+}
+
+.tweet article {
+  display:flex;
+  /* height: 2em; */
+}
+
+.tweet footer {
+  display: flex;
+  /* height: 200px; */
+}
