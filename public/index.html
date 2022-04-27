@@ -28,6 +28,9 @@
     <!-- New-Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- Tweets CSS -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -61,10 +64,10 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form class="tweet-form" method="POST" action="/tweets">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="button-counter">
             <button class="tweet-button" type="submit">Tweet</button>
@@ -72,6 +75,21 @@
           </div>
         </form>
       </section>
+
+      <section class="tweet">
+        <header>Header text</header>
+          <div class="lefthand"></div>
+            <a class="icon" href="https://i.imgur.com/73hZDYK.png"></a>
+            <div class="name"></div>
+          </div>
+          <div class="handle"></div>
+        <article class="tweet-post">Example article text</article>
+        <footer>Footer Text
+          <div>10 Days Ago</div>
+          <div>icons</div>
+        </footer>
+      </section>
+
     </main>
 
   </body>
