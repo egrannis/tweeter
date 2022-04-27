@@ -8,25 +8,28 @@
   padding: 20px 10px 20px 10px;
 }
 
+.tweet:hover {
+  box-shadow: 10px 10px 5px #BFC5D9;
+}
+
 .tweet header {
   display: flex;
   justify-content: space-between;
   height: 3em;
-  /* margin: 50px 0px 50px 0px; */
+  align-items: center;
+  padding: 0px 10px;
+  margin-bottom: 10px;
 }
 
 .lefthand {
   display:flex;
   justify-content: flex-start;
-  margin: 0 auto;
+  align-items: center;
 }
 
 .icon {
   display: flex;
-  background-image: URL(https://i.imgur.com/73hZDYK.png);
-  width: 64px;
-  height: 64px;
-  border: none;
+  padding: 0px 10px 0px 0px;
 }
 
 .handle {
@@ -39,11 +42,10 @@
 .tweet article {
   display:flex;
   align-content: center;
-  height: 4em;
-  padding: 20px;
+  padding: 25px 20px 35px 20px;
   font-size: 25px;
-  font-weight: 300;
-  /* height: 2em; */
+  font-weight: 600;
+  text-align: left;
 }
 
 .tweet footer {
@@ -53,3 +55,13 @@
   font-size: 15px;
   justify-content: space-between;
 }
+
+i:hover {
+  color: #FD9718;
+}
+
+/* main footer i:hover {
+  /* box-shadow: 8px 5px 7px rgb(175, 196, 40); */
+  /* fill: 8px 5px 7px blue; */
+  /* background-color: 8px 5px 7px rgb(175, 196, 40); */
+/* } */ 
