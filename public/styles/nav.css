@@ -3,7 +3,7 @@ nav {
   color: #FFFFFF;
   background-color: #405681;
   height: 120px;
-  width: 100vw;
+  width: 100%;
   padding: 1em 1.5em 0.1em 1.5em;
   justify-content: space-between;
   z-index: 9999;
