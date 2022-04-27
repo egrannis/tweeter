@@ -27,7 +27,7 @@
   align-items: center;
 }
 
-.icon {
+.avatar {
   display: flex;
   padding: 0px 10px 0px 0px;
 }
@@ -59,9 +59,3 @@
 i:hover {
   color: #FD9718;
 }
-
-/* main footer i:hover {
-  /* box-shadow: 8px 5px 7px rgb(175, 196, 40); */
-  /* fill: 8px 5px 7px blue; */
-  /* background-color: 8px 5px 7px rgb(175, 196, 40); */
-/* } */ 
