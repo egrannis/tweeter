@@ -84,4 +84,18 @@ renderTweets(data);
 // console.log('$tweet: ', $tweet); // to see what it looks like
 // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
+
+// listener for submission of tweet form
+$(".tweet-form").on("submit", function (event) {
+  event.preventDefault(); // prevents default form submission behaviour
+  const serialData = $("#tweet-text").serialize(); // serialize the form data
+  
+  //submit a post request that sends the serialized data to the server
+
+  $.post("/tweets", serialData, function () { // $.post (URL, Data, callback)
+    console.log("successful post")
+  })
+})
+
+
 }); //end of document.ready function
