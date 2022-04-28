@@ -40,6 +40,9 @@
     <!-- Composer Char JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
+    <!-- TimeAgo Import-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+
   </head>
 
   <body>
@@ -76,23 +79,25 @@
         </form>
       </section>
 
-      <section class="tweet">
-        <header class="user-data">
-            <div class="lefthand">
-              <img src="https://i.imgur.com/73hZDYK.png" class="avatar"></img>
-              <div class="name">Newton</div>
+      <section id="tweets-container">
+        <section class="tweet">
+          <header class="user-data">
+              <div class="lefthand">
+                <img src="https://i.imgur.com/73hZDYK.png" class="avatar"></img>
+                <div class="name">Newton</div>
+              </div>
+            <div class="handle">@SirIsaac</div>
+          </header>
+          <article class="tweet-post">If I have seen further it is by standing on the shoulders of giants</article>
+          <footer>
+            <div>10 Days Ago</div>
+            <div class="icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
             </div>
-          <div class="handle">@SirIsaac</div>
-        </header>
-        <article class="tweet-post">If I have seen further it is by standing on the shoulders of giants</article>
-        <footer>
-          <div>10 Days Ago</div>
-          <div class="icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
+          </footer>
+        </section>
       </section>
 
     </main>
