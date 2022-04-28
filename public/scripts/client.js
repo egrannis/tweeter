@@ -32,8 +32,19 @@ return $tweet;
 // Takes in tweets object, loops through each tweet, and appends to the #tweets-container
 const renderTweets = function(tweets) {
   for(let tweet of tweets) {
-    $('#tweets-container').append(createTweetElement(tweet));
+    $("#tweets-container").prepend(createTweetElement(tweet));
   }
+};
+
+// fetches tweets from the tweets page
+const loadTweets = function () {
+  $.get("/tweets", function (response) {
+  console.log(response);
+  renderTweets(response);
+  })
+  .fail(function (error) {
+   alert(error.status + ": " + error.statusText);
+   })
 };
 
 // listener for submission of tweet form
@@ -49,20 +60,11 @@ $(".tweet-form").on("submit", function (event) {
   const serialData = $("#tweet-text").serialize(); // if the tweet text doesn't bring these errors, serialize the form data
   $.post("/tweets", serialData, function () { // $.post (URL, Data, callback) // when I googled ajax post I found this but unsure if I should do .ajax?
     console.log("successful post");
-    loadTweets();
+    $("#tweet-text").val(''); // clear the form once the tweets are rendered and loaded
+    loadTweets(); // load tweets on the page
   })
 })
 
-// fetches tweets from the tweets page
-const loadTweets = function () {
-  $.get("/tweets", function (response) {
-  console.log(response);
-  renderTweets(response);
-  })
-  .fail(function (error) {
-   alert(error.status + ": " + error.statusText);
-   })
-}
 
 loadTweets();
 
