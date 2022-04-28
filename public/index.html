@@ -16,6 +16,9 @@
     <!-- imported fontawesome link tag-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- TimeAgo Import-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+    
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
@@ -40,8 +43,6 @@
     <!-- Composer Char JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-    <!-- TimeAgo Import-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
   </head>
 
@@ -68,6 +69,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
+      <!-- Section for composing a new tweet and submitting it-->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form class="tweet-form" method="POST" action="/tweets">
@@ -78,6 +80,9 @@
           </div>
         </form>
       </section>
+
+      <!-- Section for created tweets to display -->
+      <section id="tweets-container"></section>
 
     </main>
 
