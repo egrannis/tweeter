@@ -39,15 +39,18 @@ const renderTweets = function(tweets) {
 // listener for submission of tweet form
 $(".tweet-form").on("submit", function (event) {
   event.preventDefault(); // prevents default form submission behaviour
-  const serialData = $("#tweet-text").serialize(); // serialize the form data
-
+  const tweetText = $("#tweet-text").val();
+  if(tweetText.length > 140) {
+    return alert("It looks like your tweet is too long. Please enter 140 characters or less in the tweet field.");
+  }
+  if(tweetText.length === 0 || tweetText === undefined) {
+    return alert("It looks like your tweet content is not present. Make sure to enter at least 1 character in the tweet field!");
+  }
+  const serialData = $("#tweet-text").serialize(); // if the tweet text doesn't bring these errors, serialize the form data
   $.post("/tweets", serialData, function () { // $.post (URL, Data, callback) // when I googled ajax post I found this but unsure if I should do .ajax?
     console.log("successful post");
     loadTweets();
   })
-   .fail(function (error) {
-    alert(error.status + ": " + error.statusText);
-    })
 })
 
 // fetches tweets from the tweets page
