@@ -89,13 +89,32 @@ renderTweets(data);
 $(".tweet-form").on("submit", function (event) {
   event.preventDefault(); // prevents default form submission behaviour
   const serialData = $("#tweet-text").serialize(); // serialize the form data
-  
-  //submit a post request that sends the serialized data to the server
 
-  $.post("/tweets", serialData, function () { // $.post (URL, Data, callback)
+  //submit a post request that sends the serialized data to the server
+  //BIG question for line 95. Did I do this wrong? Do I need to do $.ajax (url, method: POST, etc??) This is a shorthand Ajax function, which is equivalent to:
+  /* $.ajax({
+  url: url,
+  data: data,
+  success: success,
+  dataType: dataType
+}); */
+
+  $.post("/tweets", serialData, function () { // $.post (URL, Data, callback) // when I googled ajax post I found this but unsure if I should do .ajax?
     console.log("successful post")
   })
 })
 
+// fetches tweets from the tweets page
+const loadTweets = function () {
+  $.get("/tweets", serialData, function () {
+    console.log('It works?')
+  })
+}
+
+// unsure if this below is better than on line 108
+const loadTweets = function () {
+  $.ajax("/tweets", { method: 'GET'})
+  .then(renderTweets)
+  .then(console.log("Help"));
 
 }); //end of document.ready function
