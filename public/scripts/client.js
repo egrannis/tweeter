@@ -1,8 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+// All functions and function calls are declared within document.ready function
 
 $(document).ready(function() {
 
@@ -26,7 +22,7 @@ const loadTweets = function () {
 // Call load tweets function to get the tweets to load upon page load
 loadTweets();
 
-  //takes in tweet object as input, and outputs tweet article with HTML structure
+  //function takes in tweet object as input, and outputs tweet article with HTML structure
   const createTweetElement = function(tweetObj) {
     const safeText = `<p>${escape(tweetObj.content.text)}</p>`;
     let $tweet = $(`<section class="tweet">
@@ -50,7 +46,7 @@ loadTweets();
 return $tweet;
 }
 
-// Takes in tweets object, loops through each tweet, and appends to the #tweets-container
+// Takes in tweets object, loops through each tweet, and prepends to the #tweets-container
 const renderTweets = function(tweets) {
   $("#tweets-container").empty(); // remove duplicated tweets 
   for(let tweet of tweets) {
@@ -58,20 +54,31 @@ const renderTweets = function(tweets) {
   }
 };
 
-// listener for submission of tweet form
+// Function for error message to present custom error text, slide down, and add styling if user types in incorrect character count
+const errorMessage = function (errorText) {
+  $(".error-message").html(`<i class="fa-solid fa-circle-exclamation"></i><div class="error-text-content">${errorText}</div><i class="fa-solid fa-circle-exclamation"></i>`);
+  $(".error-message").slideDown().addClass("error-styling");
+};
+
+// listener for submission of tweet form that posts the tweet text
 $(".tweet-form").on("submit", function (event) {
   event.preventDefault(); // prevents default form submission behaviour
-  const tweetText = $("#tweet-text").val();
+
+  if($(".error-message").hasClass("error-styling")) { // if error message is still showing from previous post attempt, have the error message go away when someone submits again
+    $(".error-message").slideUp().removeClass("error-styling");
+  }
+
+  const tweetText = $("#tweet-text").val(); // setting variable to value of tweet text to use for if statements
   if(tweetText.length > 140) {
-    return alert("It looks like your tweet is too long. Please enter 140 characters or less in the tweet field.");
+    return errorMessage("It looks like your tweet is too long. Please enter 140 characters or less in the text field!") // Implementing errorMessage function with custom text
   }
   if(tweetText.length === 0 || tweetText === undefined) {
-    return alert("It looks like your tweet content is not present. Make sure to enter at least 1 character in the tweet field!");
+    return errorMessage("It looks like you didn't write any content. Make sure to enter at least 1 character in the text field!"); // Implementing errorMessage function with custom text
   }
   const serialData = $("#tweet-text").serialize(); // if the tweet text doesn't bring these errors, serialize the form data
   $.post("/tweets", serialData, function () { // $.post (URL, Data, callback) // when I googled ajax post I found this but unsure if I should do .ajax?
     $("#tweet-text").val(''); // clear the form once the tweets are rendered and loaded
-    $("#counter").text(140); // resets the counter to show as 140 again
+    $("#counter").text(140); // resets the counter to show as 140 again once the tweet is posted
     loadTweets(); // load tweets on the page
   })
 })
