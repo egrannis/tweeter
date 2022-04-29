@@ -89,4 +89,4 @@ $(document).ready(function() {
       loadTweets(); // load tweets on the page
     })
   });
-}); //end of document.ready function
+});
