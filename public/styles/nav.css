@@ -28,6 +28,12 @@ nav {
   color: #df3f2d;
 }
 
+.write-new-tweet {
+  color: #FFFFFF;
+  background-color: #405681;
+  border: none;
+}
+
 @media (max-width: 1024.5px) {
   nav {
     display: flex;
