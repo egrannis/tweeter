@@ -22,6 +22,13 @@ $(document).ready(function() {
   // Call load tweets function to get the tweets to load upon page load
   loadTweets();
 
+
+  // listener for button click of write a new tweet text / down arrow logo at the righthand side of nav bar. Redirects focus to tweet-text area.
+  $(".write-new-tweet").on("click", function(event) {
+    $("#tweet-text").focus();
+  });
+
+
   //function takes in tweet object as input, and outputs tweet article with HTML structure
   const createTweetElement = function(tweetObj) {
     const safeText = `<p>${escape(tweetObj.content.text)}</p>`;
