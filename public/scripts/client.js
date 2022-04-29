@@ -83,10 +83,10 @@ $(document).ready(function() {
       return errorMessage("It looks like you didn't write any content. Make sure to enter at least 1 character in the text field!"); // Implementing errorMessage function with custom text
     }
     const serialData = $("#tweet-text").serialize(); // if the tweet text doesn't bring these errors, serialize the form data
-    $.post("/tweets", serialData, function() { // $.post (URL, Data, callback) // when I googled ajax post I found this but unsure if I should do .ajax?
+    $.post("/tweets", serialData, function() { // $.post (URL, Data, callback)
       $("#tweet-text").val(''); // clear the form once the tweets are rendered and loaded
       $("#counter").text(140); // resets the counter to show as 140 again once the tweet is posted
       loadTweets(); // load tweets on the page
-    });
+    })
   });
 }); //end of document.ready function
