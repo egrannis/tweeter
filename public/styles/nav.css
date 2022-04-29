@@ -47,4 +47,11 @@ nav {
     z-index: 9999;
     position: fixed;
   }
+
+  .write-new-tweet {
+    color: #FFFFFF;
+    background-color: transparent;
+    border: none;
+  }
+
 }
