@@ -27,8 +27,8 @@ This repository is the starter code for the project: Students will fork and clon
 ## Using the Application
 - Click at the top right of the navigation bar to be automatically directed to the text input field to create a tweet. Or, you can simply click within the tweet text input field.
 
-- Enter up to 140 characters in the tweet text box, click the "Tweet" button just below it, and see your Tweet appear at the top of the tweets list on your page! You'll notice that you aren't able to post empty text or text that exceeds 140 characters-- you'll receive error messages for those!
+- Enter up to 140 characters in the tweet text box, click the "Tweet" button just below it, and see your Tweet appear at the top of the tweets list on your page! You'll notice that you aren't able to post empty text or text that exceeds 140 characters-- you'll receive error messages instead letting you know what to fix.
 
-- Scroll through posted tweets, which show a shadow when you hover over them. The reaction icons at the bottom right of each tweet change colour when you hover over them as well to show you which reaction you are selecting!
+- Scroll through posted tweets, which show a shadow when you hover over them. The reaction icons at the bottom right of each tweet change colour when you hover over them as well to show you which reaction you are selecting.
 
 - The Tweeter app automatically sizes the content for a desktop mode and for smaller devices automatically so you can view content and share your ideas at ease. Enjoy and Tweet away!
