@@ -5,11 +5,11 @@ Tweeter is a simple, single-page Twitter clone.
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
 ## Final Product
-!["Desktop View of Interface"] (https://github.com/egrannis/tweeter/blob/a64bad384397908e83e82670537b056467b62467/docs/Desktop-view.png)
-!["View of Header on Smaller Screen"] (https://github.com/egrannis/tweeter/blob/a64bad384397908e83e82670537b056467b62467/docs/Small-screen-view-header.png)
-!["View of writing a Tweet"] (https://github.com/egrannis/tweeter/blob/00305dbb1c92f1bd45e081be8ccdabbab6253961/docs/Writing-a-tweet.png)
-!["View of error message"] (https://github.com/egrannis/tweeter/blob/00305dbb1c92f1bd45e081be8ccdabbab6253961/docs/Error-Message.png)
-!["View of Tweet with shadow on hover"] (https://github.com/egrannis/tweeter/blob/00305dbb1c92f1bd45e081be8ccdabbab6253961/docs/Small-screen-view-tweet.png)
+!["Desktop View of Interface"](https://github.com/egrannis/tweeter/blob/a64bad384397908e83e82670537b056467b62467/docs/Desktop-view.png)
+!["View of Header on Smaller Screen"](https://github.com/egrannis/tweeter/blob/a64bad384397908e83e82670537b056467b62467/docs/Small-screen-view-header.png)
+!["View of writing a Tweet"](https://github.com/egrannis/tweeter/blob/00305dbb1c92f1bd45e081be8ccdabbab6253961/docs/Writing-a-tweet.png)
+!["View of error message"](https://github.com/egrannis/tweeter/blob/00305dbb1c92f1bd45e081be8ccdabbab6253961/docs/Error-Message.png)
+!["View of Tweet with shadow on hover"](https://github.com/egrannis/tweeter/blob/00305dbb1c92f1bd45e081be8ccdabbab6253961/docs/Small-screen-view-tweet.png)
 
 ## Getting Started
 
