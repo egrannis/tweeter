@@ -28,4 +28,17 @@ nav {
   color: #df3f2d;
 }
 
-
+@media (max-width: 1024.5px) {
+  nav {
+    display: flex;
+    color: #FFFFFF;
+    background-color: #FD9718;
+    background-image: url(https://www.transparenttextures.com/patterns/arches.png);
+    height: 120px;
+    width: 100%;
+    padding: 1em 1.5em 0.1em 1.5em;
+    justify-content: space-between;
+    z-index: 9999;
+    position: fixed;
+  }
+}
