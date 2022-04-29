@@ -6,8 +6,29 @@
 
 $(document).ready(function() {
 
+  // Escape to bar XSS <script> tags
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  // fetches tweets from the tweets page
+const loadTweets = function () {
+  $.get("/tweets", function (response) {
+  renderTweets(response);
+  })
+  .fail(function (error) {
+   alert(error.status + ": " + error.statusText);
+   })
+};
+
+// Call load tweets function to get the tweets to load upon page load
+loadTweets();
+
   //takes in tweet object as input, and outputs tweet article with HTML structure
   const createTweetElement = function(tweetObj) {
+    const safeText = `<p>${escape(tweetObj.content.text)}</p>`;
     let $tweet = $(`<section class="tweet">
       <header class="user-data">
         <div class="lefthand">
@@ -16,7 +37,7 @@ $(document).ready(function() {
         </div>
       <div class="handle">${tweetObj.user.handle}</div>
     </header>
-    <article class="tweet-post">${tweetObj.content.text}</article>
+    <article class="tweet-post">${safeText}</article>
     <footer>
       <div>${timeago.format(tweetObj.created_at)}</div> 
       <div class="icons">
@@ -31,20 +52,10 @@ return $tweet;
 
 // Takes in tweets object, loops through each tweet, and appends to the #tweets-container
 const renderTweets = function(tweets) {
+  $("#tweets-container").empty(); // remove duplicated tweets 
   for(let tweet of tweets) {
     $("#tweets-container").prepend(createTweetElement(tweet));
   }
-};
-
-// fetches tweets from the tweets page
-const loadTweets = function () {
-  $.get("/tweets", function (response) {
-  console.log(response);
-  renderTweets(response);
-  })
-  .fail(function (error) {
-   alert(error.status + ": " + error.statusText);
-   })
 };
 
 // listener for submission of tweet form
@@ -59,13 +70,10 @@ $(".tweet-form").on("submit", function (event) {
   }
   const serialData = $("#tweet-text").serialize(); // if the tweet text doesn't bring these errors, serialize the form data
   $.post("/tweets", serialData, function () { // $.post (URL, Data, callback) // when I googled ajax post I found this but unsure if I should do .ajax?
-    console.log("successful post");
     $("#tweet-text").val(''); // clear the form once the tweets are rendered and loaded
+    $("#counter").text(140); // resets the counter to show as 140 again
     loadTweets(); // load tweets on the page
   })
 })
-
-
-loadTweets();
 
 }); //end of document.ready function
