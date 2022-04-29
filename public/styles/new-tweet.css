@@ -13,7 +13,6 @@
   align-items: center;
   width: 100%;
   margin: 0 auto;
-
 }
 
 #tweet-text {
@@ -51,4 +50,30 @@
   justify-content: flex-end;
   font-family: 'Bungee', cursive;
   padding: 5px 10px;
+}
+
+.red {
+  color: #df3f2d;
+}
+
+.error-styling {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 0.2rem solid #df3f2d;   
+  color: #df3f2d;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0rem 0rem 2rem 0rem;
+  font-weight: 600;
+}
+
+.fa-solid.fa-circle-exclamation {
+  display: flex;
+  color: #df3f2d;
+  padding: 1rem 1rem;
+}
+
+.error-text-content {
+  padding: 1rem 0.5rem;
 }
